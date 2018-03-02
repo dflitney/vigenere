@@ -40,7 +40,7 @@ def main():
 
     parser = argparse.ArgumentParser(description="Ed/de-crypt messages using Vigenere cypher method.")
     parser.add_argument("--key", "-k", action="store", default="CORAL", help="The Vigenere cypher key.")
-    parser.add_argument("--encrypt", "-E", action="store_true", help="Encrypt message", default=True)
+    parser.add_argument("--encrypt", "-E", action="store_true", help="Encrypt message", default=False)
     parser.add_argument("--decrypt", "-D", action="store_true", help="Decrypt message", default=False)
     parser.add_argument("--verbose", "-V", action="store_true", default=False,
                         help="Additional output - handy for debugging!")
@@ -53,7 +53,7 @@ def main():
         with open(args.plain_text_file, 'r') as f:
             text = f.read().strip().upper()
     else:
-        text = "LOOKING PRETTY GRIM OUT THERE STOP DO YOU FEEL LIKE BRAVING IT XXX"
+        text = "SOME TEST TEXT"
 
     vigenere = Vigenere()
 
