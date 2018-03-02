@@ -49,11 +49,14 @@ def main():
 
     args = parser.parse_args()
 
+    if not args.encrypt and not args.decrypt:
+        print("You MUST select one of encrypt/decrypt.")
+
     if args.plain_text_file:
         with open(args.plain_text_file, 'r') as f:
             text = f.read().strip().upper()
     else:
-        text = "SOME TEST TEXT"
+        text = input("Enter your message text: ")
 
     vigenere = Vigenere()
 
