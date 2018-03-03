@@ -62,7 +62,7 @@ $ python cypher.py --help
 usage: cypher.py [-h] [--key KEY] [--encrypt] [--decrypt] [--verbose]
                  [--plain-text-file PLAIN_TEXT_FILE]
 
-Ed/de-crypt messages using Vigenere cypher method.
+Encrypt/decrypt messages using Vigenere cypher method.
 
 optional arguments:
   -h, --help            show this help message and exit

@@ -38,7 +38,7 @@ def main():
 
     import argparse
 
-    parser = argparse.ArgumentParser(description="Ed/de-crypt messages using Vigenere cypher method.")
+    parser = argparse.ArgumentParser(description="Encrypt/decrypt messages using Vigenere cypher method.")
     parser.add_argument("--key", "-k", action="store", default="CORAL", help="The Vigenere cypher key.")
     parser.add_argument("--encrypt", "-E", action="store_true", help="Encrypt message", default=False)
     parser.add_argument("--decrypt", "-D", action="store_true", help="Decrypt message", default=False)
