@@ -3,7 +3,7 @@
 A Framework for Implementing Cyphers
 
 <dl>
-    <dt>Caesar Cypher - Not yet implemented!</dt>
+    <dt>Caesar Cypher</dt>
     <dd>
         The Caesar cypher replaces each letter in the original text with a
         corresponding letter from a rotated alphabet. As such plain text letters
