@@ -7,6 +7,6 @@ setup(name='Cypher',
       description='Cypher encryption package',
       author='Dave Flitney',
       author_email='dave.flitney@gmail.com',
-      packages=['cypher', ],
-      scripts=['cypher.py', ],
+      packages=['cipher', ],
+      scripts=['cipher.py', ],
       )

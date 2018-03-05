@@ -1,4 +1,4 @@
-from cypher.substitution import Vigenere, Caesar
+from cipher.substitution import Vigenere, Caesar
 
 import unittest
 
@@ -6,22 +6,35 @@ import unittest
 class TestCaesar(unittest.TestCase):
 
     def setUp(self):
-        self.csr = Caesar(offset=12)
+        self.csr = Caesar()
 
     def test_encode(self):
-        plain_text = "ABCDEFG"
-        encoded_text = self.csr.encrypt(plain_text)
-        self.assertEqual(encoded_text, "MNOPQRS")
+        decrypted_text = "ABCDEFG"
+        encrypted_text = self.csr.encrypt(decrypted_text)
+        self.assertEqual(encrypted_text, "NOPQRST")
 
     def test_decode(self):
-        cipher_text = "MNOPQRS"
-        plain_text = self.csr.decrypt(cipher_text)
-        self.assertEqual(plain_text, "ABCDEFG")
+        cipher_text = "NOPQRST"
+        decrypted_text = self.csr.decrypt(cipher_text)
+        self.assertEqual(decrypted_text, "ABCDEFG")
+
+    def test_caesar5(self):
+        caesar5 = Caesar(offset=5)
+        encrypted_text = caesar5.encrypt("ABCDEFG")
+        self.assertEqual(encrypted_text, "FGHIJKL")
+        decrypted_text = caesar5.decrypt(encrypted_text)
+        self.assertEqual(decrypted_text, "ABCDEFG")
 
     def test_example(self):
-        plain_text = "NOW IS THE WINTER OF OUR DISCONTENT"
-        encoded_text = self.csr.encrypt(plain_text)
-        self.assertEqual(encoded_text, "Z HLUDLETQLHUZEQCL RL FCLPUDO ZEQZE")
+        decrypted_text = "NOW IS THE WINTER OF OUR DISCONTENT"
+        encrypted_text = self.csr.encrypt(decrypted_text)
+        self.assertEqual(encrypted_text, " AIMVEMFURMIV FRDMASMAGDMQVEPA FR F")
+
+    def test_custom_alphabet(self):
+        caesar5 = Caesar(offset=5, alphabet="THEQUICKBROWNFXJMPSVLAZYDG ")
+        encrypted_text = caesar5.encrypt("ABCDEFG")
+        self.assertEqual(encrypted_text, " FWEKSQ")
+
 
 
 class TestVigenere(unittest.TestCase):
@@ -31,21 +44,21 @@ class TestVigenere(unittest.TestCase):
 
     def test_encode(self):
         key = "WOMBAT"
-        plain_text = "NOW IS THE WINTER OF OUR DISCONTENT"
-        encoded_text = self.vig.encrypt(plain_text, key)
-        self.assertEqual(encoded_text, "IBHAIKVGTF ODAEFRSJTLPUJVRUTCGIGQOT")
+        decrypted_text = "NOW IS THE WINTER OF OUR DISCONTENT"
+        encrypted_text = self.vig.encrypt(decrypted_text, key)
+        self.assertEqual(encrypted_text, "IBHAIKVGTF ODAEFRSJTLPUJVRUTCGIGQOT")
 
     def test_decode(self):
         key = "WOMBAT"
-        encoded_text = "IBHAIKVGTF ODAEFRSJTLPUJVRUTCGIGQOT"
-        plain_text = self.vig.decrypt(encoded_text, key)
-        self.assertEqual(plain_text, "NOW IS THE WINTER OF OUR DISCONTENT")
+        encrypted_text = "IBHAIKVGTF ODAEFRSJTLPUJVRUTCGIGQOT"
+        decrypted_text = self.vig.decrypt(encrypted_text, key)
+        self.assertEqual(decrypted_text, "NOW IS THE WINTER OF OUR DISCONTENT")
 
     def test_example(self):
         key = "MYPASSWORD"
-        plain_text = "THIS IS MY SECRET TEXT"
-        encoded_text = self.vig.encrypt(plain_text, key)
-        self.assertEqual(encoded_text, "EEXSR NNCALPTCIWONJHIQ")
+        decrypted_text = "THIS IS MY SECRET TEXT"
+        encrypted_text = self.vig.encrypt(decrypted_text, key)
+        self.assertEqual(encrypted_text, "EEXSR NNCALPTCIWONJHIQ")
 
 
 if __name__ == '__main__':
