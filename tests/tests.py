@@ -22,6 +22,13 @@ class TestStringMethods(unittest.TestCase):
 
         self.assertEqual(plain_text, "NOW IS THE WINTER OF OUR DISCONTENT")
 
+    def test_example(self):
+        key = "MYPASSWORD"
+        plain_text = "THIS IS MY SECRET TEXT"
+        encoded_text = self.vig.encrypt(plain_text, key)
+
+        self.assertEqual(encoded_text, "EEXSR NNCALPTCIWONJHIQ")
+
 
 if __name__ == '__main__':
     unittest.main()
