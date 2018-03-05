@@ -4,8 +4,36 @@ Copyright (c) Dave Flitney, 2018
 Implementation of the Vigenere cypher
 """
 
+class Cipher:
 
-class Vigenere:
+    core_alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ "
+
+    def __init__(self):
+        raise NotImplemented
+
+    def encrypt(self):
+        raise NotImplemented
+
+    def decrypt(self):
+        raise NotImplemented
+
+
+class Caesar(Cipher):
+
+    def __init__(self, *args, **kwargs):
+        i = 12
+        self.alphabet = "".join([ section for section in [ self.core_alphabet[i:], self.core_alphabet[0:i] ] ])
+
+    def encrypt(self, plain_text):
+        cypher_text = [ self.alphabet[self.core_alphabet.find(p)] for p in list(plain_text) ]
+        return "".join(cypher_text)
+
+    def decrypt(self, cypher_text):
+        plain_text = [ self.core_alphabet[self.alphabet.find(e)] for e in list(cypher_text)]
+        return "".join(plain_text)
+
+
+class Vigenere(Cipher):
 
     alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ "
     alpha_table = []
