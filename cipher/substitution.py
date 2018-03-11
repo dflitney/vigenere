@@ -4,13 +4,14 @@ Copyright (c) Dave Flitney, 2018
 Cipher playground
 """
 
+
 class Cipher:
 
     alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ "
 
     def __init__(self, *args, **kwargs):
         if "alphabet" in kwargs:
-            self.alphabet=kwargs["alphabet"]
+            self.alphabet = kwargs["alphabet"]
 
     def encrypt(self):
         raise NotImplemented
@@ -24,14 +25,14 @@ class Caesar(Cipher):
     def __init__(self, *args, **kwargs):
         super(Caesar, self).__init__(*args, **kwargs)
         i = int(kwargs.get("offset", "13"))
-        self.rot_alphabet = "".join([ section for section in [ self.alphabet[i:], self.alphabet[0:i] ] ])
+        self.rot_alphabet = "".join([section for section in [self.alphabet[i:], self.alphabet[0:i]]])
 
     def encrypt(self, plain_text):
-        cipher_text = [ self.rot_alphabet[self.alphabet.find(p)] for p in list(plain_text) ]
+        cipher_text = [self.rot_alphabet[self.alphabet.find(p)] for p in list(plain_text)]
         return "".join(cipher_text)
 
     def decrypt(self, cipher_text):
-        plain_text = [ self.alphabet[self.rot_alphabet.find(e)] for e in list(cipher_text)]
+        plain_text = [self.alphabet[self.rot_alphabet.find(e)] for e in list(cipher_text)]
         return "".join(plain_text)
 
 

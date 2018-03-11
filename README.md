@@ -2,32 +2,28 @@
 
 A Framework for Exploring Historical Ciphers
 
-<dl>
-    <dt>Caesar Cipher</dt>
-    <dd>
-        The Caesar cipher replaces each letter in the original text with a
-        corresponding letter from a rotated alphabet. As such plain text letters
-        will always translate to the same encrypted letter. This is trivially
-        attacked via simple frequency analysis; assuming the original text is english
-        then the most frequent letter in the encrypted text corresponds to "E" in
-        the original text. Once you know the translation of one letter you have cracked
-        the code.
-    </dd>
+### Caesar Cipher
 
-    <dt>Vigenere Cipher</dt>
-    <dd>
-        While the Caesar cipher only uses a single substitute alphabet, the Vigenere
-        cipher improves upon this by sequentially selecting from a list
-        of rotated alphabets. This <i>polyalphabetic</i> substitution allows the same
-        letter to be substituted with a different letter in the
-        encripted text thus obfuscating the letter frequency relationship.
+The Caesar cipher replaces each letter in the original text with a
+corresponding letter from a rotated alphabet. As such plain text letters
+will always translate to the same encrypted letter. This is trivially
+attacked via simple frequency analysis; assuming the original text is english
+then the most frequent letter in the encrypted text corresponds to "E" in
+the original text. Once you know the translation of one letter you have cracked
+the code.
 
-        This is still not a very strong cipher. At its heart
-        it is simply an extension of the Caesar substitution
-        cipher, several simple attacks exist, but it is easy to
-        implement, analyse and fun to play with.
-    </dd>
-</dl>
+### Vigenere Cipher
+
+While the Caesar cipher only uses a single substitute alphabet, the Vigenere
+cipher improves upon this by sequentially selecting from a list
+of rotated alphabets. This <i>polyalphabetic</i> substitution allows the same
+letter to be substituted with a different letter in the
+encripted text thus obfuscating the letter frequency relationship.
+
+This is still not a very strong cipher. At its heart
+it is simply an extension of the Caesar substitution
+cipher, several simple attacks exist, but it is easy to
+implement, analyse and fun to play with.
 
 ## Implementation details
 
