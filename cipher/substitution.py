@@ -42,14 +42,13 @@ class Vigenere(Cipher):
     def __init__(self, *args, **kwargs):
         """ Create a table of all the possible rotated alphabets """
         super(Vigenere, self).__init__(*args, **kwargs)
-        self.alpha_table = ["{0}{1}".format(self.alphabet[i:], self.alphabet[0:i]) for i in range(len(self.alphabet))]
 
     def encrypt(self, plain_text, key_word):
         """ Encrypt the text with the give key word """
         cipher_text = []
         for i, p in enumerate(list(plain_text)):
             key_letter = key_word[i % len(key_word)]
-            e = self.alpha_table[self.alphabet.find(key_letter)][self.alphabet.find(p)]
+            e = self.alphabet[(self.alphabet.find(key_letter) + self.alphabet.find(p)) % len(self.alphabet)]
             cipher_text.append(e)
         return "".join(cipher_text)
 
