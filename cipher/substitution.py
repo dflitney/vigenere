@@ -37,8 +37,6 @@ class Caesar(Cipher):
 
 class Vigenere(Cipher):
 
-    alpha_table = []
-
     def __init__(self, *args, **kwargs):
         """ Create a table of all the possible rotated alphabets """
         super(Vigenere, self).__init__(*args, **kwargs)
