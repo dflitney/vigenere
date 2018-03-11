@@ -72,3 +72,15 @@ class TestVigenere(unittest.TestCase):
         encrypted_text = self.vig.encrypt(decrypted_text, key)
         self.assertEqual(encrypted_text, "EEXSR NNCALPTCIWONJHIQ")
 
+    def test_encode(self):
+        key = "CORAL"
+        decrypted_text = "WE ARE DISCOVERED STOP FLEA AT ONCE STOP"
+        encrypted_text = self.vig.encrypt(decrypted_text, key)
+        self.assertEqual(encrypted_text, "YSQABGNUICEBLEBGRQSDQCQFWGOQADBBDCPBFJO ")
+
+    def test_decode(self):
+        key = "CORAL"
+        encrypted_text = "YSQABGNUICEBLEBGRQSDQCQFWGOQADBBDCPBFJO "
+        decrypted_text = self.vig.decrypt(encrypted_text, key)
+        self.assertEqual(decrypted_text, "WE ARE DISCOVERED STOP FLEA AT ONCE STOP")
+
