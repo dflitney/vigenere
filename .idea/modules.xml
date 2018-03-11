@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/vigenere.iml" filepath="$PROJECT_DIR$/.idea/vigenere.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/vignere.iml" filepath="$PROJECT_DIR$/.idea/vignere.iml" />
     </modules>
   </component>
 </project>
