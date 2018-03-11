@@ -16,7 +16,7 @@ the code.
 
 While the Caesar cipher only uses a single substitute alphabet, the Vigenere
 cipher improves upon this by sequentially selecting from a list
-of rotated alphabets. This <i>polyalphabetic</i> substitution allows the same
+of rotated alphabets. This _polyalphabetic_ substitution allows the same
 letter to be substituted with a different letter in the
 encripted text thus obfuscating the letter frequency relationship.
 
