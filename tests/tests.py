@@ -60,6 +60,3 @@ class TestVigenere(unittest.TestCase):
         encrypted_text = self.vig.encrypt(decrypted_text, key)
         self.assertEqual(encrypted_text, "EEXSR NNCALPTCIWONJHIQ")
 
-
-if __name__ == '__main__':
-    unittest.main()
